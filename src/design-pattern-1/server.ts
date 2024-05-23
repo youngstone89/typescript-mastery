@@ -8,6 +8,7 @@ export class Server {
         data: ''
     }
     getData(clientTimestamp: number): DataStore | undefined {
+        // if server's data is the most recent, return data
         if (clientTimestamp < this.store.timestamp) {
             return this.store;
         } else {
